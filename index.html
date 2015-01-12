@@ -1,112 +1,130 @@
-<!DOCTYPE HTML>
+<!doctype html>
+
+<html lang="en">
 <head>
-    <title>MIS-projekt</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
+
+  <title>Osobna stranica - početna</title>
+  <meta name="description" content="SIM">
+  <meta name="author" content="SIM">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  	
+
+    <!-- jQuery library   -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="jquery.bxslider.css" rel="stylesheet" />
+
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	    
+		$('.bxslider').bxSlider({
+	  mode: 'fade',
+	  captions: true,
+	  auto: true,
+		});
+	  });
+	</script>
+
+
+
+
 </head>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Search Box Example 2 - default placeholder text gets cleared on click</title>
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-<!-- Add jQuery to your website if you don't have it already -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!-- JAVASCRIPT to clear search text when the field is clicked -->
-<script type="text/javascript">
-$(function() {
-	$("#tfq2b").click(function() {
-		if ($("#tfq2b").val() == "Search our website"){
-			$("#tfq2b").val(""); 
-		}
-	});
-});
-</script>
-<!-- CSS styles for standard search box with placeholder text-->
-<style type="text/css">
-	#tfheader{
-		background-color:#c3dfef;
-	}
-	#tfnewsearch{
-		float:right;
-		padding:20px;
-	}
-	.tftextinput2{
-		margin: 0;
-		padding: 5px 15px;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size:14px;
-		color:#666;
-		border:1px solid #0076a3; border-right:0px;
-		border-top-left-radius: 5px 5px;
-		border-bottom-left-radius: 5px 5px;
-	}
-	.tfbutton2 {
-		margin: 0;
-		padding: 5px 7px;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size:14px;
-		font-weight:bold;
-		outline: none;
-		cursor: pointer;
-		text-align: center;
-		text-decoration: none;
-		color: #ffffff;
-		border: solid 1px #0076a3; border-right:0px;
-		background: #0095cd;
-		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
-		border-top-right-radius: 5px 5px;
-		border-bottom-right-radius: 5px 5px;
-	}
-	.tfbutton2:hover {
-		text-decoration: none;
-		background: #007ead;
-		background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-		background: -moz-linear-gradient(top,  #0095cc,  #00678e);
-	}
-	/* Fixes submit button height problem in Firefox */
-	.tfbutton2::-moz-focus-inner {
-	  border: 0;
-	}
-	.tfclear{
-		clear:both;
-	}
-</style>
-</head>
 <body>
-	<!-- HTML for SEARCH BAR -->
-	<div id="tfheader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-		        <input type="text" id="tfq2b" class="tftextinput2" name="q" size="21" maxlength="120" value="Search our website"><input type="submit" value=">" class="tfbutton2">
-		</form>
-		<div class="tfclear"></div>
-	</div>
+
+	<div id="wrapper">
+		<header>
+			<ul>
+				<li><a href="index.html">Početna</a></li>
+				<li><a href="fakultet.html">Fakultet</a></li>
+				<li><a href="dodaj seminar.html">Dodaj seminar</a></li>
+				<li><a href="seminari.html">Seminari</a></li>
+				<li><a href="kontakt.html">Kontakt</a></li>
+			</ul>
+		</header>
+
+
+
+		<ul class="bxslider">
+		  <li><img src="images/pic1.jpg" title="Slide 1 - dodati opis slike" /></li>
+		  <li><img src="images/pic2.jpg" title="Slide 2 - dodati opis slike" /></li>
+		  <li><img src="images/pic3.jpg" title="Slide 3 - dodati opis slike" /></li>
+		  <li><img src="images/pic4.jpg" title="Slide 4 - dodati opis slike" /></li>
+		  <li><img src="images/pic5.jpg" title="Slide 5 - dodati opis slike" /></li>
+		  <li><img src="images/pic6.jpg" title="Slide 6 - dodati opis slike" /></li>
+		  <li><img src="images/pic7.jpg" title="Slide 7 - dodati opis slike" /></li>
+		  <li><img src="images/pic8.jpg" title="Slide 8 - dodati opis slike" /></li>
+		  <li><img src="images/pic9.jpg" title="Slide 9 - dodati opis slike" /></li>
+		  <li><img src="images/pic10.jpg" title="Slide 10 - dodati opis slike" /></li>
+		</ul>
+
+
+		<h1>Moduliranje i simulacija</h1>
+
+		<div class="box_trecina">
+			<h2>Sadržaj kolegija Modeliranje i simulacija</h2>
+			<p>Vrste modela. Procesni modeli. Fizikalna ograničenja modeliranja - model participacije. Matematički
+modeli - anticipativni i inkurzivni modeli. Modeli elektrotehničkih komponenti. Model povezivosti.
+Aproksimativni modeli i skupovna matematika. Kvalitativni i kvantitativni aspekti modela. Modeli
+softverskih procesa. Hidrodinamički modeli. Modeli jediničnih procesa - laserski procesi. Bond graf
+metoda modeliranja. Modeli i srazmjeri. Verbalni modeli. Modeli i korespondentne diferencijalne
+jednadžbe. Diskretizacija rješenja. Modeli dinamike fluida. Rubni problemi i uvjeti diskretizacija. <br /><br /><a href="fakultet.html" class="vise">više...</a></p>
+		</div>
+
+		<div class="box_trecina">
+			<h2>Projekti</h2>
+			<p> Pješački most u Osijeku 3D model <br />
+			Pametna rasvjeta<br />
+			Analitički modeli reda veličine i kvalitativno kvantitativni modeli<br />
+			Molekularna dinamika<br />
+			Stadion Gradski vrt 3D model<br />
+			Rekonstrukcija dvorca Pejačević<br />
+			Koncept rasvjete interijera i eksterijera
+			<br /><br /><a href="privatno.html" class="vise">više...</a></p>
+		</div>
+
+		<div class="box_trecina last">
+			<h2>loomen</h2>
+			<p>Napisati nešto i ostaviti hiperverzu prema loomenu gdje se sadržaj kolegija i nalazi <br /><br /><a href="zivotopis.html" class="vise">više...</a></p>
+		</div>
+
+
+
+		<div class="clear"></div>
+
+
+
+	</div><!-- /wrapper -->
+
+
+
 </body>
 </html>
 
 
 
-<body>
-<<<<<<< HEAD
-    <header>
-        <div class="logo"><h1> LOGO </h1></div>
-        <ul class="izbornik">
-		
-			<li>O PREDMETU</li>
-            <li>DODAJ NOVI SEMINAR</li>
-            <li>SEMINARI</li>
-			<lu>
-			<select name ="SEMINARI"> <br/><br/>
-			<option value="KATEGORIJA 1">KATEGORIJA 1</option>
-			<option value="KATEGORIJA 2">KATEGORIJA 2</option>
-			<option value="KATEGORIJA 3">KATEGORIJA 3</option>
-            <option value="KATEGORIJA 4">KATEGORIJA 4</option>
-			<option value="KATEGORIJA 5">KATEGORIJA 5</option>
-			</lu>
-        </ul>
-    </header>
-=======
-    <h1>TEST</h1>
->>>>>>> parent of a221025... Početak dizajna
-</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
