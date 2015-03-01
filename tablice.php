@@ -16,7 +16,7 @@ $sql_seminar = "CREATE TABLE seminar (
 	id_seminara INT NOT NULL AUTO_INCREMENT, 
 	naziv_seminara VARCHAR (100) NOT NULL, 
 	autori TEXT,
-	opis TEXT, autori TEXT, 
+	opis TEXT,
 	alat VARCHAR (50), 
 	godina INT (4),
 	dokument BINARY, 
