@@ -32,14 +32,37 @@
             <li class="divider"></li>
             <li><a href="dodaj_seminar.php">Dodaj seminar</a></li>
             <li class="divider"></li>
-            <li><a href="seminari.php">Seminari</a></li>
+            <li><a href="#">Seminari</a></li>
             <li class="divider"></li>
             <li><a href="../about.html">O nama</a></li>
     </ul>
     </section>
-</nav>
-    
-<form method="POST">
+</nav>   
+<div class="row">
+		<div class="large-12 columns centered-text">
+			<h2>Odaberite kategoriju seminara</h2>
+		</div>
+	</div>
+<div class="row">
+		<div class="large-12 columns centered-text">
+            <h5 class="subheader">Nakon što odaberete kategoriju seminarskih radova, otvorit će vam se detaljan prikaz svih radova</h5>
+		</div>
+	</div> 
+<div class="row">
+    <a href="#" class="button expand">Mehanički sustavi</a>
+    <a href="#" class="button expand">Električni sustavi</a>
+    <a href="#" class="button expand">Elektromehanički sustavi</a>
+    <a href="#" class="button expand">Termički sustavi</a>
+    <a href="#" class="button expand">Softverski sustavi</a>
+<div class="row">
+		<div class="large-12 columns centered-text">
+			<h4>Ukoliko želite dodati novi seminar pritisnite na gumb ispod</h4>
+		</div>
+</div>
+    <a href="#" data-reveal-id="myModal" class="button expand">Dodaj novi seminar</a>
+
+<div id="myModal" class="reveal-modal" data-reveal>
+  <form method="POST">
   <div class="row">
     <div class="large-6 columns">
     <h3>Dodaj novi seminar</h3>
@@ -106,7 +129,10 @@
         <a href="#" class="button radius">Pošalji seminar</a>
     </div>
   </div>
-</form>  
+</form>
+ <a class="close-reveal-modal">&#215;</a>
+</div>  
+</div>
 <footer class="footer">
   <div class="row full-width">
     <div class="small-12 medium-3 large-4 columns">
