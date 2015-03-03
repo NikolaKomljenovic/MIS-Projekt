@@ -34,7 +34,7 @@
             <li class="divider"></li>
             <li><a href="seminari.html">Seminari</a></li>
             <li class="divider"></li>
-            <li><a href="#">O nama</a></li>
+            <li><a href="../about.html">O nama</a></li>
     </ul>
     </section>
 </nav>
@@ -139,13 +139,13 @@
   ('__proto__' in {} ? 'zepto' : 'jquery') +
   '.js><\/script>')
   </script>
-<script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+<script src="../js/vendor/jquery.js"></script>
+    <script src="../js/foundation.min.js"></script>
 <script>
     $(document).foundation();
   </script>
-<script src="js/templates/jquery.js"></script>
-<script src="js/templates/foundation.js"></script>
+<script src="../js/templates/jquery.js"></script>
+<script src="../js/templates/foundation.js"></script>
 <script>
       $(document).foundation();
 
