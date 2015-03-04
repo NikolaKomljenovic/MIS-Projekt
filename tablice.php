@@ -5,7 +5,7 @@ $sql_kategorija = "CREATE TABLE kategorija (
 		id_kategorije INT NOT NULL AUTO_INCREMENT,
 		naziv_kategorije VARCHAR (50) NOT NULL, 
 		PRIMARY KEY (id_kategorije)
-		)ENGINE = InnoDB";
+		)ENGINE = MyISAM DEFAULT CHARACTER SET cp1250 COLLATE=cp1250_croatian_ci";
 $retval_kategorija = mysql_query ($sql_kategorija);
 if (!$retval_kategorija) {
 die ("Tablica kategorija nije kreirana: ".mysql_error () ."\n");
@@ -22,7 +22,8 @@ $sql_seminar = "CREATE TABLE seminar (
 	dokument BINARY, 
 	id_kategorije INT (5), 
 	PRIMARY KEY (id_seminara), 
-	FOREIGN KEY (id_kategorije) REFERENCES kategorija (id_kategorije))";
+	FOREIGN KEY (id_kategorije) REFERENCES kategorija (id_kategorije)
+	) ENGINE = MyISAM DEFAULT CHARACTER SET cp1250 COLLATE=cp1250_croatian_ci";
 $retval_seminar = mysql_query ($sql_seminar);
 if (!$retval_seminar) {
 die ("Tablica seminar nije kreirana: ".mysql_error () ."\n");

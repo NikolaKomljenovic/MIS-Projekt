@@ -2,6 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
+    <?php header( 'Content-Type: text/html; charset=UTF-8' );?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MIS | Projekt</title>
     <link rel="stylesheet" href="../css/foundation.css" />
@@ -16,7 +17,7 @@
  
            <li class="name">
             <h1>
-            <a href="../index.html">
+            <a href="../index.php">
             Modeliranje i simulacija
             </a>
             </h1>
@@ -28,9 +29,7 @@
     <ul class="right">
         <li class="divider"></li>
             <li class="divider"></li>
-            <li><a href="../index.html">Početna</a></li>
-            <li class="divider"></li>
-            <li><a href="dodaj_seminar.php">Dodaj seminar</a></li>
+            <li><a href="../index.php">Početna</a></li>
             <li class="divider"></li>
             <li><a href="#">Seminari</a></li>
             <li class="divider"></li>
@@ -61,8 +60,8 @@
 </div>
     <a href="#" data-reveal-id="myModal" class="button expand">Dodaj novi seminar</a>
 
-<div id="myModal" class="reveal-modal" data-reveal>
-  <form method="POST">
+<div id="myModal" class="reveal-modal medium" data-reveal>
+  <form accept-charset="utf-8" method="POST">
   <div class="row">
     <div class="large-6 columns">
     <h3>Dodaj novi seminar</h3>
@@ -126,7 +125,7 @@
   </div>
   <div class="row">
     <div class="large-6 columns">
-        <a href="#" class="button radius">Pošalji seminar</a>
+        <a href="#" class="button radius">Pošalji</a>
     </div>
   </div>
 </form>

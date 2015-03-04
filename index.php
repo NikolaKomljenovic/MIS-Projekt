@@ -15,7 +15,7 @@
  
            <li class="name">
             <h1>
-            <a href="index.html">
+            <a href="index.php">
             Modeliranje i simulacija
             </a>
             </h1>
@@ -27,8 +27,6 @@
         <li class="divider"></li>
             <li class="divider"></li>
             <li><a href="#">Početna</a></li>
-            <li class="divider"></li>
-            <li><a href="Seminari/dodaj_seminar.php">Dodaj seminar</a></li>
             <li class="divider"></li>
             <li><a href="../seminari/seminari.php">Seminari</a></li>
             <li class="divider"></li>
@@ -76,7 +74,7 @@
     <h4>Loomen</h4>
     <p>Napisati nešto i ostaviti hiperverzu prema loomenu gdje se sadržaj kolegija i nalazi </p>   
     </div>
-</div>   
+</div>
 </div> 
 </div>
 <footer class="footer">
