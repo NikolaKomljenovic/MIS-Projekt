@@ -70,7 +70,7 @@ body {
 }
 
 .parallax-background {
-	background-image:url('/img/cover.jpg');
+	background-image:url('../img/cover.jpg');
 	height: 620px;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;

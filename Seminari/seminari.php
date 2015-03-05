@@ -2,7 +2,6 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <?php header( 'Content-Type: text/html; charset=UTF-8' );?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MIS | Projekt</title>
     <link rel="stylesheet" href="../css/foundation.css" />
@@ -48,11 +47,11 @@
 		</div>
 	</div> 
 <div class="row">
-    <a href="#" class="button expand">Mehanički sustavi</a>
-    <a href="#" class="button expand">Električni sustavi</a>
-    <a href="#" class="button expand">Elektromehanički sustavi</a>
-    <a href="#" class="button expand">Termički sustavi</a>
-    <a href="#" class="button expand">Softverski sustavi</a>
+    <a href="mehanicki_sustavi.php" class="button expand">Mehanički sustavi</a>
+    <a href="elektricni_sustavi.php" class="button expand">Električni sustavi</a>
+    <a href="el_mehan_sustavi.php" class="button expand">Elektromehanički sustavi</a>
+    <a href="termicki_sustavi.php" class="button expand">Termički sustavi</a>
+    <a href="softverski_sustavi.php" class="button expand">Softverski sustavi</a>
 <div class="row">
 		<div class="large-12 columns centered-text">
 			<h4>Ukoliko želite dodati novi seminar pritisnite na gumb ispod</h4>
@@ -61,7 +60,10 @@
     <a href="#" data-reveal-id="myModal" class="button expand">Dodaj novi seminar</a>
 
 <div id="myModal" class="reveal-modal medium" data-reveal>
-  <form accept-charset="utf-8" method="POST">
+
+<!-- forma za unos podataka o seminaru-->
+
+  <form action='' method="POST">
   <div class="row">
     <div class="large-6 columns">
     <h3>Dodaj novi seminar</h3>
@@ -112,7 +114,7 @@
   <div class="row">
     <div class="large-6 columns">
       <label>Kategorija
-        <select>
+        <select name="a">
           <?php
               $kategorijaSQL=mysql_query("SELECT * FROM kategorija"); 
 		      for($i=1;$Skategorija=mysql_fetch_array($kategorijaSQL);$i++){
@@ -125,11 +127,17 @@
   </div>
   <div class="row">
     <div class="large-6 columns">
-        <a href="#" class="button radius">Pošalji</a>
-    </div>
+		<input class="button radius" type="submit" name="submit" value="Pošalji">
+<?php
+        if (isset($_POST['submit'])) {
+        $temp=$_POST['a'];
+        mysql_query ("INSERT INTO seminar (naziv_seminara, autori, opis, alat, godina, dokument, id_kategorije) VALUES ('$_POST[naziv_s]', '$_POST[autori]', '$_POST[opis]','$_POST[alat]', '$_POST[godina]','$_POST[uploaded]', '$temp')", $spoj);
+        }
+?>
+      </div>
   </div>
 </form>
- <a class="close-reveal-modal">&#215;</a>
+<a class="close-reveal-modal">&#215;</a>
 </div>  
 </div>
 <footer class="footer">
