@@ -35,7 +35,8 @@
             <li><a href="../about.html">O nama</a></li>
     </ul>
     </section>
-</nav>   
+</nav>
+<br>
 <div class="row">
 		<div class="large-12 columns centered-text">
 			<h2>Odaberite kategoriju seminara</h2>
@@ -46,6 +47,7 @@
             <h5 class="subheader">Nakon što odaberete kategoriju seminarskih radova, otvorit će vam se detaljan prikaz svih radova</h5>
 		</div>
 	</div> 
+<br>
 <div class="row">
     <a href="mehanicki_sustavi.php" class="button expand">Mehanički sustavi</a>
     <a href="elektricni_sustavi.php" class="button expand">Električni sustavi</a>
@@ -63,7 +65,7 @@
 
 <!-- forma za unos podataka o seminaru-->
 
-  <form action='' method="POST">
+  <form action='upload.php' method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="large-6 columns">
     <h3>Dodaj novi seminar</h3>
@@ -92,8 +94,8 @@
   </div>
   <div class="row">
     <div class="large-6 columns">
-      <label>Alat
-        <input type="text" name="alat" placeholder="Unesite nazive korištenih alata" />
+      <label>Tehnologija
+        <input type="text" name="alat" placeholder="Unesite nazive korištenih tehnologija i alata" />
       </label>
     </div>
   </div>
@@ -105,17 +107,31 @@
     </div>
   </div>
   <div class="row">
-    <div class="large-6 columns">
-      <label>Dodavanje datoteke
-          <input name="uploaded" type="file">
-      </label>
+    <div class="large-8 columns">
+    Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
     </div>
   </div>
   <div class="row">
-    <div class="large-6 columns">
-      <label>Kategorija
+    <div class="large-3 columns left">
+      <label>Kategorija 1
         <select name="a">
           <?php
+              mysql_query("SET NAMES 'utf8'");
+              $kategorijaSQL=mysql_query("SELECT * FROM kategorija"); 
+		      for($i=1;$Skategorija=mysql_fetch_array($kategorijaSQL);$i++){
+	               echo "<option value='{$Skategorija["id_kategorije"]}'>{$Skategorija["naziv_kategorije"]}</option>";
+	           }
+	       ?>
+        </select>
+      </label>
+    </div>
+    <div class="large-3 columns left">
+      <label>Kategorija 2
+        <select name="a">
+          <?php
+              mysql_query("SET NAMES 'utf8'");
               $kategorijaSQL=mysql_query("SELECT * FROM kategorija"); 
 		      for($i=1;$Skategorija=mysql_fetch_array($kategorijaSQL);$i++){
 	               echo "<option value='{$Skategorija["id_kategorije"]}'>{$Skategorija["naziv_kategorije"]}</option>";
@@ -131,7 +147,7 @@
 <?php
         if (isset($_POST['submit'])) {
         $temp=$_POST['a'];
-        mysql_query ("INSERT INTO seminar (naziv_seminara, autori, opis, alat, godina, dokument, id_kategorije) VALUES ('$_POST[naziv_s]', '$_POST[autori]', '$_POST[opis]','$_POST[alat]', '$_POST[godina]','$_POST[uploaded]', '$temp')", $spoj);
+        mysql_query ("INSERT INTO seminar (naziv_seminara, autori, opis, alat, godina, id_kategorije) VALUES ('$_POST[naziv_s]', '$_POST[autori]', '$_POST[opis]','$_POST[alat]', '$_POST[godina]','$temp')", $spoj);
         }
 ?>
       </div>
@@ -140,6 +156,7 @@
 <a class="close-reveal-modal">&#215;</a>
 </div>  
 </div>
+<br>
 <footer class="footer">
   <div class="row full-width">
     <div class="small-12 medium-3 large-4 columns">
