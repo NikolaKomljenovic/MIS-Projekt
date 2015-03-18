@@ -1,0 +1,154 @@
+.full-width {
+  max-width: 1400px;
+}
+
+.footer {
+  background-color: #3A3A3A;
+  padding: 2rem 4rem;
+  text-align: center;
+  color: #fff;
+}
+.footer i {
+  font-size: 100px;
+}
+
+.footer h4 {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 2.5rem;
+  margin-bottom: 10px;
+}
+.footer p, .footer a {
+  font-weight: 300;
+  font-size: .8em;
+  color: #fff;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .footer .columns:nth-child(n+2) {
+    border-left: 1px solid #b3b3b3;
+    min-height: 280px;
+  }
+}
+.footer-links {
+  list-style-type: none;
+}
+.footer-links li {
+  margin-top: .5em;
+}
+.results {
+  margin-top: 50px;
+}
+.results .search-results {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.results img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.auth-plain {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+
+.left-solid {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+<!-- Parrlax design css -->
+
+body {
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+	font-weight: 200;
+	font-size: 20px;
+}
+
+.parallax-background {
+	background-image:url('../img/cover.jpg');
+	height: 620px;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+	background-size: cover;
+	position: fixed;
+	width: 100%;
+}
+
+.intro-text {
+	font-size: 50px;
+	color: #fff;
+	text-align: center;
+	margin-top: 15%;
+}
+.parallax-content {
+	max-width: 100%;
+	position: relative;
+	top: 500px;
+	padding: 50px;
+	font-size: 20px;
+	background-color: #fff;
+}
+
+<!-- Testimorial -->
+
+h2 {
+  margin-top: 40px;
+  font-weight: 200;
+  color: #333;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.quote {
+  background: #ebf3f5;
+  padding: 15px 20px 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.quote:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 20px 18px 0 18px;
+  border-color: #ebf3f5 transparent transparent transparent;
+  position: relative;
+  top: 37px;
+  left: 20px;
+}
+
+.student {
+  margin-left: 25px;
+  margin-bottom: 80px;
+}
+.student .photo {
+  background-color: #ccc;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin-right: 10px;
+}
+.student p {
+  position: relative;
+  top: 5px;
+  text-transform: uppercase;
+}
+.student p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.student p:nth-child(3) {
+  font-size: 14px;
+  color: #777;
+}
