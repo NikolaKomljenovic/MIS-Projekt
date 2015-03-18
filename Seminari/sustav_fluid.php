@@ -37,7 +37,7 @@
 </nav>
 <div class="row">
 		<div class="large-12 columns centered-text">
-			<h2>Softverski sustavi</h2>
+			<h2>Sustavi s fluidima</h2>
 		</div>
 	</div>
     <br>
@@ -45,7 +45,7 @@
 //spajanje na bazu i isčitavanje svega iz nje!
 mysql_query("SET NAMES 'utf8'");
 //ispis seminara iz kategorije mehanički sustavi
-$sql_upit="SELECT naziv_seminara, autori, opis, alat, godina, dokument FROM seminar WHERE id_kategorije = 5 OR podkategorija=5 ORDER BY id_seminara ASC";
+$sql_upit="SELECT naziv_seminara, autori, opis, alat, godina, dokument FROM seminar WHERE id_kategorije = 6 OR podkategorija=6 ORDER BY id_seminara ASC";
 if (!$q=mysql_query(@$sql_upit))
 {
 echo mysql_error();

@@ -9,6 +9,7 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <script src="../js/vendor/modernizr.js"></script>
   </head>
+  <?php include("../spoj.php");?>
   <body>
    <nav class="top-bar" data-topbar>
        <ul class="title-area">
@@ -34,6 +35,47 @@
     </ul>
     </section>
 </nav>
+<div class="row">
+		<div class="large-12 columns centered-text">
+			<h2>Električni sustavi</h2>
+		</div>
+	</div>
+    <br>
+<?php
+//spajanje na bazu i isčitavanje svega iz nje!
+mysql_query("SET NAMES 'utf8'");
+//ispis seminara iz kategorije mehanički sustavi
+$sql_upit="SELECT naziv_seminara, autori, opis, alat, godina, dokument FROM seminar WHERE id_kategorije = 2 OR podkategorija=2 ORDER BY id_seminara ASC";
+if (!$q=mysql_query(@$sql_upit))
+{
+echo mysql_error();
+die();
+}
+//ako je broj redaka nula onda nema seminara u bazi
+if (mysql_num_rows($q)==0)
+{
+echo '<div class="row clearfix">';
+echo '<div class="large-12 columns centered-text">';
+echo '<h3>Nema seminara iz ove kategorije.<h3>';
+echo '</div>';    
+echo '</div>';
+}
+else {
+while ($redak=mysql_fetch_array($q)){
+echo '<div class="row clearfix">';
+    echo '<div class=large-12 columns">';
+        echo '<b>Naziv seminara: </b>', $redak["naziv_seminara"];
+        echo '<input class="button right" type="button" onClick="window.location.href=','&#39;'.$redak["dokument"].'&#39;','" value="Preuzmi .rar datoteku">';
+        echo '<br><b>Autori: </b>', $redak["autori"];
+        echo '<br><b>Opis: </b>', $redak["opis"];
+        echo '<br><b>Tehnologija: </b>', $redak["alat"];
+        echo '<br><b>Godina: </b>', $redak["godina"];
+        echo '<hr>';
+    echo '</div>';    
+echo '</div>';
+}
+}
+?>
 <footer class="footer">
   <div class="row full-width">
     <div class="small-12 medium-3 large-4 columns">

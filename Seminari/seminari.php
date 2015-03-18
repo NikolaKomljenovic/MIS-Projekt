@@ -54,6 +54,8 @@
     <a href="el_mehan_sustavi.php" class="button expand">Elektromehanički sustavi</a>
     <a href="termicki_sustavi.php" class="button expand">Termički sustavi</a>
     <a href="softverski_sustavi.php" class="button expand">Softverski sustavi</a>
+    <a href="sustav_fluid.php" class="button expand">Sustavi sa fluidima</a>
+    <a href="3d_modeli.php" class="button expand">3D modeli</a>
 <div class="row">
 		<div class="large-12 columns centered-text">
 			<h4>Ukoliko želite dodati novi seminar pritisnite na gumb ispod</h4>
@@ -65,7 +67,7 @@
 
 <!-- forma za unos podataka o seminaru-->
 
-  <form action='upload.php' method="POST" enctype="multipart/form-data">
+  <form  data-abide action='upload.php' method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="large-6 columns">
     <h3>Dodaj novi seminar</h3>
@@ -73,49 +75,64 @@
   </div>
   <div class="row">
     <div class="large-6 columns">
-      <label>Naziv seminara
-        <input type="text" name="naziv_s" placeholder="Unesite naziv seminara" />
-      </label>
+    <div class="name-field">
+    <label>Naziv seminara<small> obvezno</small>
+      <input type="text"name="naziv_s" placeholder="Unesite naziv seminara" required pattern="[a-zA-Z0-9]+">
+    </label>
+    <small class="error">Unesite samo slova i brojke!</small>
+  </div>
     </div>
   </div>
   <div class="row">
     <div class="large-6 columns">
-      <label>Autori
-        <input type="text" name="autori" placeholder="Imena autora odvojena zarezom" />
-      </label>
+   <div class="name-field">
+    <label>Autori<small> obvezno</small>
+      <input type="text"name="autori" placeholder="Imena autora odvojena zarezom" required pattern="[a-zA-Z,]+">
+    </label>
+    <small class="error">Unesite samo slova i odvojite zarezom</small>
+   </div>
     </div>
   </div>
   <div class="row">
     <div class="large-6 columns">
-      <label>Opis
-        <input type="text" name="opis" placeholder="Kratki opis Vašeg rada" />
-      </label>
+    <div class="name-field">
+    <label>Opis<small> obvezno</small>
+      <input type="text" name="opis" placeholder="Kratki opis Vašeg rada" required pattern="[a-zA-Z0-9]+">
+    </label>
+    <small class="error">Unesite samo slova i odvojite zarezom</small>
+  </div>
     </div>
   </div>
   <div class="row">
     <div class="large-6 columns">
-      <label>Tehnologija
-        <input type="text" name="alat" placeholder="Unesite nazive korištenih tehnologija i alata" />
-      </label>
+    <div class="name-field">
+    <label>Tehnologija<small> obvezno</small>
+      <input type="text" name="alat" placeholder="Unesite nazive korištenih tehnologija i alata"required pattern="[a-zA-Z,]+">
+    </label>
+    <small class="error">Unesite samo slova i odvojite zarezom</small>
+   </div>
     </div>
   </div>
   <div class="row">
     <div class="large-2 columns">
-      <label>Godina
-        <input type="text" name="godina" placeholder="Unesite godinu" />
-      </label>
+    <div class="name-field">
+    <label>Godina<small> obvezno</small>
+      <input type="text" name="godina" placeholder="Unesite godinu" required pattern="[0-9]+">
+    </label>
+    <small class="error">Unesite samo brojke!</small>
+   </div>
     </div>
   </div>
   <div class="row">
     <div class="large-8 columns">
-    Select image to upload:
+    <label>Dodajte datoteku:
         <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
+    </label>
     </div>
   </div>
   <div class="row">
     <div class="large-3 columns left">
-      <label>Kategorija 1
+      <label>Kategorija
         <select name="a">
           <?php
               mysql_query("SET NAMES 'utf8'");
@@ -128,13 +145,13 @@
       </label>
     </div>
     <div class="large-3 columns left">
-      <label>Kategorija 2
-        <select name="a">
+      <label>Podkategorija
+        <select name="b">
           <?php
               mysql_query("SET NAMES 'utf8'");
-              $kategorijaSQL=mysql_query("SELECT * FROM kategorija"); 
-		      for($i=1;$Skategorija=mysql_fetch_array($kategorijaSQL);$i++){
-	               echo "<option value='{$Skategorija["id_kategorije"]}'>{$Skategorija["naziv_kategorije"]}</option>";
+              $kategorijaSQL2=mysql_query("SELECT * FROM kategorija"); 
+		      for($i=1;$Skategorija2=mysql_fetch_array($kategorijaSQL2);$i++){
+	               echo "<option value='{$Skategorija2["id_kategorije"]}'>{$Skategorija2["naziv_kategorije"]}</option>";
 	           }
 	       ?>
         </select>
@@ -144,12 +161,6 @@
   <div class="row">
     <div class="large-6 columns">
 		<input class="button radius" type="submit" name="submit" value="Pošalji">
-<?php
-        if (isset($_POST['submit'])) {
-        $temp=$_POST['a'];
-        mysql_query ("INSERT INTO seminar (naziv_seminara, autori, opis, alat, godina, id_kategorije) VALUES ('$_POST[naziv_s]', '$_POST[autori]', '$_POST[opis]','$_POST[alat]', '$_POST[godina]','$temp')", $spoj);
-        }
-?>
       </div>
   </div>
 </form>

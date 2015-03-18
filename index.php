@@ -26,7 +26,7 @@
     <ul class="right">
         <li class="divider"></li>
             <li class="divider"></li>
-            <li><a href="#">Početna</a></li>
+            <li><a href="index.php">Početna</a></li>
             <li class="divider"></li>
             <li><a href="../seminari/seminari.php">Seminari</a></li>
             <li class="divider"></li>
@@ -34,7 +34,6 @@
     </ul>
     </section>
 </nav>
- 
 <div class="row">
     <div class="large-12 columns">
         <div class="row">
@@ -47,7 +46,6 @@
                     <img src="img/pic5.jpg" alt="slide image">
                     <img src="img/pic6.jpg" alt="slide image">
                     <img src="img/pic7.jpg" alt="slide image">
-                    <img src="img/pic8.jpg" alt="slide image">
                     <img src="img/pic9.jpg" alt="slide image">
                     <img src="img/pic10.jpg" alt="slide image">
 
@@ -71,8 +69,11 @@
            Koncept rasvjete interijera i eksterijera </p> 
     </div>
     <div class="large-4 columns">
-    <h4>Loomen</h4>
-    <p>Napisati nešto i ostaviti hiperverzu prema loomenu gdje se sadržaj kolegija i nalazi </p>   
+    <h4>Loomen i upute za korištenje</h4>
+    <p>
+        <a href="https://loomen.carnet.hr/course/view.php?id=4557">Loomen stranica</a><br>
+        <a href="upute_za_koristenje.php">Upute za korištenje</a>
+    </p>   
     </div>
 </div>
 </div> 

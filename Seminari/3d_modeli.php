@@ -37,7 +37,7 @@
 </nav>
 <div class="row">
 		<div class="large-12 columns centered-text">
-			<h2>Softverski sustavi</h2>
+			<h2>3D Modeli</h2>
 		</div>
 	</div>
     <br>
@@ -45,7 +45,7 @@
 //spajanje na bazu i isčitavanje svega iz nje!
 mysql_query("SET NAMES 'utf8'");
 //ispis seminara iz kategorije mehanički sustavi
-$sql_upit="SELECT naziv_seminara, autori, opis, alat, godina, dokument FROM seminar WHERE id_kategorije = 5 OR podkategorija=5 ORDER BY id_seminara ASC";
+$sql_upit="SELECT naziv_seminara, autori, opis, alat, godina, dokument FROM seminar WHERE id_kategorije = 7 OR podkategorija=7 ORDER BY id_seminara ASC";
 if (!$q=mysql_query(@$sql_upit))
 {
 echo mysql_error();
@@ -54,11 +54,7 @@ die();
 //ako je broj redaka nula onda nema seminara u bazi
 if (mysql_num_rows($q)==0)
 {
-echo '<div class="row clearfix">';
-echo '<div class="large-12 columns centered-text">';
-echo '<h3>Nema seminara iz ove kategorije.<h3>';
-echo '</div>';    
-echo '</div>';
+echo "Nema seminara iz ove kategorije.";
 }
 else {
 while ($redak=mysql_fetch_array($q)){
